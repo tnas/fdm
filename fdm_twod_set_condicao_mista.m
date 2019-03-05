@@ -1,6 +1,6 @@
 function [A, F] = fdm_twod_set_condicao_mista(pvc_def, meshing, A, F, no, hx, hy)
 
-aI.x = aI.y = cI.x = dI.x = eI.x = fI.y = no / pvc_def.nnos_x;
+aI.x = aI.y = cI.x = dI.x = eI.x = fI.y = no;
 cI.y = aI.y + 1;
 dI.y = aI.y - 3;
 eI.y = aI.y + 3;
@@ -32,7 +32,7 @@ elseif (meshing(no).y == 0 && dI.y >= 1)
 		
 	% Atualizando aI
 	A(aI.x, aI.y) = A(aI.x, aI.y) + (A(dI.x, dI.y) * (1 - parcela_fluxo_vertical));
-	
+  
   % Atualizando vetor de termos independentes
 	F(fI.y) = F(fI.y) - (A(dI.x, dI.y) *  parcela_fluxo_vertical * pvc_def.u_ref);
   

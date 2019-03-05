@@ -9,7 +9,7 @@ for no = 1 : pvc_def.ordem
 endfor
 
 % Diagonal Principal (aI)
-a_I = pvc_def.gama + ((2 * pvc_def.coefK) * (1/(hx^2) + 1/(hy^2)));
+%a_I = pvc_def.gama + ((2 * pvc_def.coefK) * (1/(hx^2) + 1/(hy^2)));
 for i = 1 : pvc_def.ordem
 	%A(i,i) = a_I;
 	A(i,i) = vec_coef(i).aI;
