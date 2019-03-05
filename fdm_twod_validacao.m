@@ -19,7 +19,7 @@ meshing = fdm_twod_meshing(pvc_def, dominio, hx, hy);
 A = fdm_build_matriz_rigidez(pvc_def, meshing, hx, hy); 
 F = zeros(pvc_def.ordem, 1);
 
-% Aplicando as condições de contorno de valor prescrito
+% Aplicando as condicoes de contorno de valor prescrito
 for no = 1 : pvc_def.ordem
 
 	if (meshing(no).x == dominio.a || meshing(no).x == dominio.b ||

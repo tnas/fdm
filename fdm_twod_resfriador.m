@@ -61,6 +61,16 @@ else
 	endfor
 endif
 
+if (pvc_def.debug)
+  printf("hx = %d, hy = %d\n",  hx, hy);
+  for i = 1 : pvc_def.nnos_x
+    for j = 1 : pvc_def.nnos_y
+        printf("%d ", A(i,j));
+    endfor
+    printf("\n");
+  endfor
+endif
+
 % Resolvendo o PVC
 uh = A\F;
 

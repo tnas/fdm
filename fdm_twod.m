@@ -1,9 +1,9 @@
 function fdm_twod(pvc, aprox, plot, nnos_x, nnos_y)
 
-pvc_def.ordem = nnos_x * nnos_y;
+pvc_def.ordem  = nnos_x * nnos_y;
 pvc_def.nnos_x = nnos_x;
 pvc_def.nnos_y = nnos_y;
-pvc_def.aprox = aprox;
+pvc_def.aprox  = aprox;
 
 if (pvc == 1)
 	printf("Problema de validacao selecionado.\n");
@@ -16,7 +16,7 @@ elseif (pvc == 2)
 	printf("Tempo de execucao: %f segundos\n", cputime() - initial_time);
 
 elseif (pvc == 3)
-	printf("Problema do resfriador bidimensional com condicao de contorno mista - Ordem %d - selecionado\n.", aprox);
+	printf("Problema do resfriador bidimensional com condicao de contorno mista - Ordem %d - selecionado.\n", aprox);
 	pvc_def.misto = 1;
 	initial_time = cputime();
 	[vecx, vecy, vecz] = fdm_twod_resfriador(pvc_def);
@@ -34,7 +34,7 @@ end
 % ***********************************
 % Plotagem da Solução
 % ***********************************
-if (plot)
+if (plot && pvc != 1)
 	tri = delaunay(vecx, vecy);
 	trimesh(tri, vecx, vecy, vecz);
 endif
