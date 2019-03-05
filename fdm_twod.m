@@ -28,7 +28,6 @@ elseif (pvc == 4)
 	initial_time = cputime();
 	[vecx, vecy, vecz] = fdm_twod_resfriador(pvc_def);
 	printf("Tempo de execucao: %f segundos\n", cputime() - initial_time);
-
 end
 
 % ***********************************
